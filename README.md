@@ -39,5 +39,5 @@ If you do not have Python installed yet, it is highly recommended that you insta
 
 7. **best_model.py**- I use this script to load all the trained models *(.h5 file)* and generate a confusion matrix, F1-score, and accuracy of each model. Based on the results, the final model is selected. Note that, I have used a validation set as a test set which is not recommended (This was done due to shortage of data). This process of manually choosing the best model *(.h5 file)* is done because [focal loss](https://arxiv.org/pdf/1708.02002.pdf) is used as a loss function in the program.
 
-8. **video_test.py**- This script loads the default [haarcascade_frontalface](https://github.com/opencv/opencv/tree/master/data/haarcascades) *(.xml file)* of [OpenCV](https://opencv.org/) and also loads the best-trained model. By using the trained model for real-time facial expression is detected via webcam. 
+8. **video_test.py**- This script loads the [haarcascade_frontalface_default.xml](https://github.com/opencv/opencv/tree/master/data/haarcascades) of [OpenCV](https://opencv.org/) to detect the human frontal face and also loads the best-trained model. By using the trained model for real-time facial expression is detected via webcam. 
 
