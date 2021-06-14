@@ -19,6 +19,16 @@ This project requires **Python** and the following Python packages:
 
 If you do not have Python installed yet, it is highly recommended that you install the [Anaconda](https://www.anaconda.com/) distribution of Python, which already has most of the above packages. 
 
+### Loss Function- ***[Focal Loss](https://arxiv.org/pdf/1708.02002.pdf)***
+From the analysis of training data, we can see that in this dataset there remains a huge class imbalance problem. To solve this, I have used [oversampling](https://en.wikipedia.org/wiki/Oversampling_and_undersampling_in_data_analysis) with [focal loss](https://arxiv.org/pdf/1708.02002.pdf) function. Usually, focal loss gives less weight to those classes which have lots of examples and gives more weight to those classes which have fewer examples. Focal loss was first implemented in [Focal Loss for Dense Object Detection](https://arxiv.org/pdf/1708.02002.pdf) paper. The focal loss paper reports:
+
+>The large class imbalance encountered during training of dense detectors overwhelms the cross entropy loss. Easily classified negatives comprise the majority of the loss and dominate the gradient. While α balances the importance of positive/negative examples, it does not differentiate between easy/hard examples.
+
+It may be irrelevant to write this here, but I like an analogy about [focal loss](https://arxiv.org/pdf/1708.02002.pdf) written in a [medium article](https://medium.com/visionwizard/understanding-focal-loss-a-quick-read-b914422913e7) so I am sharing it anyway. 
+
+>Let’s consider a scenario of a soccer match. You are seeing your favorite rivalry of Real Madrid vs Barcelona on television. The stadium is fully packed with the audience chanting for their respective teams with a total of **70,000** people. Suddenly Real Madrid scores and whole stadium bursts will the chants of “Goaalll..!!”. No one can hear anything but chants, chants, and chants. 3 commentators are analyzing the match that these telecast reporters want to show on the TV. So what they do to? They give **more importance** to the commentary and give **less weight** to the chants so that people watching on television can listen to the commentary and live match analysis. Yes, you will hear the chants while watching but, commentary voice will get more amplified.
+
+
 ### Short Description of Each Source Code File
 1. **data_preprocessing.py**- This file turns the pixel data of [FER-2013](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data) into images and saves the images into a specific directory according to the annotations specified in the [FERPlus](https://github.com/microsoft/FERPlus) dataset.
 
@@ -37,7 +47,10 @@ If you do not have Python installed yet, it is highly recommended that you insta
   <img src="images/part_of_model.png" height=175>
 </p>
 
-7. **best_model.py**- I use this script to load all the trained models *(.h5 file)* and generate a confusion matrix, F1-score, and accuracy of each model. Based on the results, the final model is selected. Note that, I have used a validation set as a test set which is not recommended (This was done due to shortage of data). This process of manually choosing the best model *(.h5 file)* is done because [focal loss](https://arxiv.org/pdf/1708.02002.pdf) is used as a loss function in the program.
+7. **best_model.py**- I use this script to load all the trained models *(.h5 file)* and generate a confusion matrix, F1-score, and accuracy of each model. Based on the results, the final model is selected. Note that, I have used a validation set as a test set which is not recommended (This was done due to shortage of data). This process of manually choosing the best model *(.h5 file)* is done because [focal loss](https://arxiv.org/pdf/1708.02002.pdf) is used as a loss function in the program. Visualization of confusion matrix of the best model (from my perspective) with accuracy and F1-score. 
+<p align="center">
+  <img src="images/confusion_matrix.png" height=425>
+</p>
 
 8. **video_test.py**- This script loads the [haarcascade_frontalface_default.xml](https://github.com/opencv/opencv/tree/master/data/haarcascades) of [OpenCV](https://opencv.org/) to detect the human frontal face and also loads the best-trained model. By using the trained model for real-time facial expression is detected via webcam. 
 
