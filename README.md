@@ -20,7 +20,11 @@ This project requires **Python** and the following Python packages:
 If you do not have Python installed yet, it is highly recommended that you install the [Anaconda](https://www.anaconda.com/) distribution of Python, which already has most of the above packages. 
 
 ### Analysis of Training Data
-The Facial Emotion Recognition (FER) dataset has a huge class imbalance problem. This bias in the raw training dataset influences deep learning algorithms to ignore the minority class entirely. This is a major problem of facial emotion recognition. To solve this problem partially, the [oversampling](https://en.wikipedia.org/wiki/Oversampling_and_undersampling_in_data_analysis) technique is used. The dataset is increased between 3 to 16 folds per class.
+The Facial Emotion Recognition (FER) dataset has a huge class imbalance problem. This bias/imbalance in the raw training dataset influences machine learning algorithms to ignore the minority class entirely. This is a major problem of facial emotion recognition. To solve this problem partially, the [oversampling](https://en.wikipedia.org/wiki/Oversampling_and_undersampling_in_data_analysis) technique is used. The dataset is increased between 3 to 16 folds per class. After the oversampling in the training dataset, all the images are randomly shuffled and the shuffled images are saved into the specific directory with a fixed naming convention. In the time of training. Random data augmentation is applied in a controlled way. Thus, this oversampling of training data not only contributes to solving the class imbalance problem, but also contributes to solving the overfitting of the model. Visualization of numbers of images per class in the data set before and after preprocessing.
+<p align="center">
+  <img src="images/analysis_of_training_data.png" height=450>
+</p>
+
 
 ### Loss Function- ***[Focal Loss](https://arxiv.org/pdf/1708.02002.pdf)***
 From the analysis of training data, we can see that in this dataset there remains a huge class imbalance problem. To solve this, I have used [oversampling](https://en.wikipedia.org/wiki/Oversampling_and_undersampling_in_data_analysis) with [focal loss](https://arxiv.org/pdf/1708.02002.pdf) function. Usually, focal loss gives less weight to those classes which have lots of examples and gives more weight to those classes which have fewer examples. Focal loss was first implemented in [Focal Loss for Dense Object Detection](https://arxiv.org/pdf/1708.02002.pdf) paper. The focal loss paper reports:
