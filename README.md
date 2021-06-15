@@ -35,6 +35,7 @@ It may be irrelevant to write this here, but I like an analogy about [focal loss
 
 >Let’s consider a scenario of a soccer match. You are seeing your favorite rivalry of Real Madrid vs Barcelona on television. The stadium is fully packed with the audience chanting for their respective teams with a total of **70,000** people. Suddenly Real Madrid scores and whole stadium bursts will the chants of “Goaalll..!!”. No one can hear anything but chants, chants, and chants. 3 commentators are analyzing the match that these telecast reporters want to show on the TV. So what they do to? They give **more importance** to the commentary and give **less weight** to the chants so that people watching on television can listen to the commentary and live match analysis. Yes, you will hear the chants while watching but, commentary voice will get more amplified.
 
+Last addition to focal loss. Reading the original paper [Focal Loss for Dense Object Detection](https://arxiv.org/pdf/1708.02002.pdf) and understanding it completely was hard for me. This blog [Use Focal Loss To Train Model Using Imbalanced Dataset](https://leimao.github.io/blog/Focal-Loss-Explained/) helped me a lot while I was reading the original paper. 
 
 ### Short Description of Each Source Code File
 1. **data_preprocessing.py**- This file turns the pixel data of [FER-2013](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data) into images and saves the images into a specific directory according to the annotations specified in the [FERPlus](https://github.com/microsoft/FERPlus) dataset.
@@ -63,3 +64,12 @@ It may be irrelevant to write this here, but I like an analogy about [focal loss
 
 9. **video_test.py**- This script loads the [haarcascade_frontalface_default.xml](https://github.com/opencv/opencv/tree/master/data/haarcascades) of [OpenCV](https://opencv.org/) to detect the human frontal face and also loads the best-trained model. By using the trained model for real-time facial expression is detected via webcam. 
 
+### Reference
+- [Challenges in Representation Learning: Facial Expression Recognition Challenge](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data)
+- [Facial Expression Recognition Plus (FER+)](https://github.com/microsoft/FERPlus)
+- [VERY DEEP CONVOLUTIONAL NETWORKS FOR LARGE-SCALE IMAGE RECOGNITION](https://arxiv.org/pdf/1409.1556.pdf)
+- [opencv-haarcascades](https://github.com/opencv/opencv/tree/master/data/haarcascades)
+- [Focal Loss for Dense Object Detection](https://arxiv.org/pdf/1708.02002.pdf)
+- [Use Focal Loss To Train Model Using Imbalanced Dataset](https://leimao.github.io/blog/Focal-Loss-Explained/)
+- [Understanding Focal Loss —A Quick Read](https://medium.com/visionwizard/understanding-focal-loss-a-quick-read-b914422913e7)
+- [Netron: Visualizer for neural network, deep learning and machine learning models](https://github.com/lutzroeder/netron)
