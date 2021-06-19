@@ -64,6 +64,13 @@ Last addition to focal loss. Reading the original paper [Focal Loss for Dense Ob
 
 9. **video_test.py**- This script loads the [haarcascade_frontalface_default.xml](https://github.com/opencv/opencv/tree/master/data/haarcascades) of [OpenCV](https://opencv.org/) to detect the human frontal face and also loads the best-trained model. By using the trained model for real-time facial expression is detected via webcam. 
 
+### Result
+[Video link](https://www.youtube.com/watch?v=9d_tforOtl0) on YouTube
+
+https://user-images.githubusercontent.com/17143739/122651560-85166a80-d15b-11eb-8ab7-1e762e192ace.mp4
+
+
+
 ### Reference
 - [Challenges in Representation Learning: Facial Expression Recognition Challenge](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data)
 - [Facial Expression Recognition Plus (FER+)](https://github.com/microsoft/FERPlus)
